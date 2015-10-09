@@ -1,0 +1,902 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>695</width>
+    <height>682</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>QtLs</string>
+  </property>
+  <property name="locale">
+   <locale language="Turkish" country="Turkey"/>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QTextBrowser" name="textBrowser">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="MinimumExpanding">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <property name="sizeConstraint">
+       <enum>QLayout::SetMinimumSize</enum>
+      </property>
+      <item>
+       <widget class="QLabel" name="label_path">
+        <property name="text">
+         <string>Path:</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="lineEdit_path"/>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pushButton_Run">
+        <property name="text">
+         <string>Run</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pushButton_Help">
+        <property name="text">
+         <string>Help</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <widget class="QScrollArea" name="scrollArea">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="MinimumExpanding">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="sizeAdjustPolicy">
+       <enum>QAbstractScrollArea::AdjustToContents</enum>
+      </property>
+      <property name="widgetResizable">
+       <bool>true</bool>
+      </property>
+      <widget class="QWidget" name="scrollAreaWidgetContents">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>-838</y>
+         <width>669</width>
+         <height>1736</height>
+        </rect>
+       </property>
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <layout class="QVBoxLayout" name="verticalLayout_2">
+        <item>
+         <widget class="QCheckBox" name="label_a">
+          <property name="text">
+           <string>1. Tümü</string>
+          </property>
+          <attribute name="buttonGroup">
+           <string notr="true">checkboxGroup</string>
+          </attribute>
+         </widget>
+        </item>
+        <item>
+         <widget class="QCheckBox" name="label_A">
+          <property name="text">
+           <string>2. Tümü, '.' ve '..' hariç</string>
+          </property>
+          <attribute name="buttonGroup">
+           <string notr="true">checkboxGroup</string>
+          </attribute>
+         </widget>
+        </item>
+        <item>
+         <widget class="QCheckBox" name="label_author">
+          <property name="text">
+           <string>3. Yazarı göster</string>
+          </property>
+          <attribute name="buttonGroup">
+           <string notr="true">checkboxGroup</string>
+          </attribute>
+         </widget>
+        </item>
+        <item>
+         <widget class="QCheckBox" name="label_b">
+          <property name="text">
+           <string>4. -b c style escape</string>
+          </property>
+          <attribute name="buttonGroup">
+           <string notr="true">checkboxGroup</string>
+          </attribute>
+         </widget>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_2">
+          <item>
+           <widget class="QCheckBox" name="label_blocksize">
+            <property name="text">
+             <string>5. Blok büyüklüğünü seç</string>
+            </property>
+            <attribute name="buttonGroup">
+             <string notr="true">checkboxGroup</string>
+            </attribute>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer_2">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QComboBox" name="comboBox_blocksize"/>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QCheckBox" name="label_B">
+          <property name="text">
+           <string>6. Yedek dosyaları gösterme (~ ile biten)</string>
+          </property>
+          <attribute name="buttonGroup">
+           <string notr="true">checkboxGroup</string>
+          </attribute>
+         </widget>
+        </item>
+        <item>
+         <widget class="QCheckBox" name="label_c">
+          <property name="text">
+           <string>7. -c show ctime with -t sort by ctime</string>
+          </property>
+          <attribute name="buttonGroup">
+           <string notr="true">checkboxGroup</string>
+          </attribute>
+         </widget>
+        </item>
+        <item>
+         <widget class="QCheckBox" name="label_C">
+          <property name="text">
+           <string>8. Sütunlara göre listele</string>
+          </property>
+          <attribute name="buttonGroup">
+           <string notr="true">checkboxGroup</string>
+          </attribute>
+         </widget>
+        </item>
+        <item>
+         <widget class="QCheckBox" name="label_color">
+          <property name="text">
+           <string>9. Renkli çıktı (çalışmıyor)</string>
+          </property>
+          <attribute name="buttonGroup">
+           <string notr="true">checkboxGroup</string>
+          </attribute>
+         </widget>
+        </item>
+        <item>
+         <widget class="QCheckBox" name="label_d">
+          <property name="text">
+           <string>10. Sadece çalışılan dizini göster ('.')</string>
+          </property>
+          <attribute name="buttonGroup">
+           <string notr="true">checkboxGroup</string>
+          </attribute>
+         </widget>
+        </item>
+        <item>
+         <widget class="QCheckBox" name="label_D">
+          <property name="text">
+           <string>11. Çıktıyı Emacs 'Dired Modu' ile uyumlu hale getir</string>
+          </property>
+          <attribute name="buttonGroup">
+           <string notr="true">checkboxGroup</string>
+          </attribute>
+         </widget>
+        </item>
+        <item>
+         <widget class="QCheckBox" name="label_f">
+          <property name="text">
+           <string>12. -f enable -aU disable --color </string>
+          </property>
+          <attribute name="buttonGroup">
+           <string notr="true">checkboxGroup</string>
+          </attribute>
+         </widget>
+        </item>
+        <item>
+         <widget class="QCheckBox" name="label_F">
+          <property name="text">
+           <string>13. Tip belirt</string>
+          </property>
+          <attribute name="buttonGroup">
+           <string notr="true">checkboxGroup</string>
+          </attribute>
+         </widget>
+        </item>
+        <item>
+         <widget class="QCheckBox" name="label_filetype">
+          <property name="text">
+           <string>14. Tip belirt (Çalıştırılabilirliği gösterme)</string>
+          </property>
+          <attribute name="buttonGroup">
+           <string notr="true">checkboxGroup</string>
+          </attribute>
+         </widget>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_9">
+          <item>
+           <widget class="QCheckBox" name="label_format">
+            <property name="text">
+             <string>15. --format=WORD </string>
+            </property>
+            <attribute name="buttonGroup">
+             <string notr="true">checkboxGroup</string>
+            </attribute>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer_6">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QComboBox" name="comboBox_format"/>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QCheckBox" name="label_fulltime">
+          <property name="text">
+           <string>16. Tam zamanı göster</string>
+          </property>
+          <attribute name="buttonGroup">
+           <string notr="true">checkboxGroup</string>
+          </attribute>
+         </widget>
+        </item>
+        <item>
+         <widget class="QCheckBox" name="label_g">
+          <property name="text">
+           <string>17. Sahipler olmadan ayrıntılı listele</string>
+          </property>
+          <attribute name="buttonGroup">
+           <string notr="true">checkboxGroup</string>
+          </attribute>
+         </widget>
+        </item>
+        <item>
+         <widget class="QCheckBox" name="label_group">
+          <property name="text">
+           <string>18. Önce dizinleri listele</string>
+          </property>
+          <attribute name="buttonGroup">
+           <string notr="true">checkboxGroup</string>
+          </attribute>
+         </widget>
+        </item>
+        <item>
+         <widget class="QCheckBox" name="label_G">
+          <property name="text">
+           <string>19. Grup bilgisini gizle</string>
+          </property>
+          <attribute name="buttonGroup">
+           <string notr="true">checkboxGroup</string>
+          </attribute>
+         </widget>
+        </item>
+        <item>
+         <widget class="QCheckBox" name="label_h">
+          <property name="text">
+           <string>20. Boyutları okunabilir tipte göster</string>
+          </property>
+          <attribute name="buttonGroup">
+           <string notr="true">checkboxGroup</string>
+          </attribute>
+         </widget>
+        </item>
+        <item>
+         <widget class="QCheckBox" name="label_si">
+          <property name="text">
+           <string>21. Boyutları okunabilir tipte ve 1000-bayt blokları cinsinden göster</string>
+          </property>
+          <attribute name="buttonGroup">
+           <string notr="true">checkboxGroup</string>
+          </attribute>
+         </widget>
+        </item>
+        <item>
+         <widget class="QCheckBox" name="label_H">
+          <property name="text">
+           <string>22. -H, --dereference-command-line</string>
+          </property>
+          <attribute name="buttonGroup">
+           <string notr="true">checkboxGroup</string>
+          </attribute>
+         </widget>
+        </item>
+        <item>
+         <widget class="QCheckBox" name="label_deference">
+          <property name="text">
+           <string>23. --dereference  -command-line-symlink-to-dir</string>
+          </property>
+          <attribute name="buttonGroup">
+           <string notr="true">checkboxGroup</string>
+          </attribute>
+         </widget>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_7">
+          <item>
+           <widget class="QCheckBox" name="label_hide">
+            <property name="text">
+             <string>24. Örüntüye uyan girişleri gizle  (ilk iki seçenek bunu iptal eder)</string>
+            </property>
+            <attribute name="buttonGroup">
+             <string notr="true">checkboxGroup</string>
+            </attribute>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer_4">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="lineEdit_hide"/>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_8">
+          <item>
+           <widget class="QCheckBox" name="label_indicatorstyle">
+            <property name="text">
+             <string>25. --indicator-style=WORD</string>
+            </property>
+            <attribute name="buttonGroup">
+             <string notr="true">checkboxGroup</string>
+            </attribute>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer_5">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QComboBox" name="comboBox_indicatorstyle"/>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QCheckBox" name="label_i">
+          <property name="text">
+           <string>26. Dizinleme numaralarını göster</string>
+          </property>
+          <attribute name="buttonGroup">
+           <string notr="true">checkboxGroup</string>
+          </attribute>
+         </widget>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_12">
+          <item>
+           <widget class="QCheckBox" name="label_ignore">
+            <property name="text">
+             <string>27. Örüntüye uyan girişleri gizle</string>
+            </property>
+            <attribute name="buttonGroup">
+             <string notr="true">checkboxGroup</string>
+            </attribute>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer_3">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="lineEdit_ignore"/>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QCheckBox" name="label_k">
+          <property name="text">
+           <string>28. Boyutları 1024-bayt blokları halinde gösterir</string>
+          </property>
+          <attribute name="buttonGroup">
+           <string notr="true">checkboxGroup</string>
+          </attribute>
+         </widget>
+        </item>
+        <item>
+         <widget class="QCheckBox" name="label_l">
+          <property name="text">
+           <string>29. Ayrıntılı listele</string>
+          </property>
+          <attribute name="buttonGroup">
+           <string notr="true">checkboxGroup</string>
+          </attribute>
+         </widget>
+        </item>
+        <item>
+         <widget class="QCheckBox" name="label_L">
+          <property name="text">
+           <string>30. Dosya linklerinin kendisi değil, ilgili dosya hakkında bilgi ver</string>
+          </property>
+          <attribute name="buttonGroup">
+           <string notr="true">checkboxGroup</string>
+          </attribute>
+         </widget>
+        </item>
+        <item>
+         <widget class="QCheckBox" name="label_m">
+          <property name="text">
+           <string>31. Elementleri virgül ile ayır</string>
+          </property>
+          <attribute name="buttonGroup">
+           <string notr="true">checkboxGroup</string>
+          </attribute>
+         </widget>
+        </item>
+        <item>
+         <widget class="QCheckBox" name="label_n">
+          <property name="text">
+           <string>32. Kullanıcı ve Grup kimliklerini sayısal ifade et</string>
+          </property>
+          <attribute name="buttonGroup">
+           <string notr="true">checkboxGroup</string>
+          </attribute>
+         </widget>
+        </item>
+        <item>
+         <widget class="QCheckBox" name="label_N">
+          <property name="text">
+           <string>33. -N, --literal</string>
+          </property>
+          <attribute name="buttonGroup">
+           <string notr="true">checkboxGroup</string>
+          </attribute>
+         </widget>
+        </item>
+        <item>
+         <widget class="QCheckBox" name="label_o">
+          <property name="text">
+           <string>34. Ayrıntılı listlele (Grup bilgileri gizli)</string>
+          </property>
+          <attribute name="buttonGroup">
+           <string notr="true">checkboxGroup</string>
+          </attribute>
+         </widget>
+        </item>
+        <item>
+         <widget class="QCheckBox" name="label_p">
+          <property name="text">
+           <string>35. -p, --indicator-style=slash</string>
+          </property>
+          <attribute name="buttonGroup">
+           <string notr="true">checkboxGroup</string>
+          </attribute>
+         </widget>
+        </item>
+        <item>
+         <widget class="QCheckBox" name="label_q">
+          <property name="text">
+           <string>36. -q, --hide-control-chars</string>
+          </property>
+          <attribute name="buttonGroup">
+           <string notr="true">checkboxGroup</string>
+          </attribute>
+         </widget>
+        </item>
+        <item>
+         <widget class="QCheckBox" name="label_showcontrolchars">
+          <property name="text">
+           <string>37. --show-control-chars</string>
+          </property>
+          <attribute name="buttonGroup">
+           <string notr="true">checkboxGroup</string>
+          </attribute>
+         </widget>
+        </item>
+        <item>
+         <widget class="QCheckBox" name="label_Q">
+          <property name="text">
+           <string>38. Girişleri tırnak içine al</string>
+          </property>
+          <attribute name="buttonGroup">
+           <string notr="true">checkboxGroup</string>
+          </attribute>
+         </widget>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_6">
+          <item>
+           <widget class="QCheckBox" name="label_quotingstyle">
+            <property name="text">
+             <string>39. --quoting-style=WORD   </string>
+            </property>
+            <attribute name="buttonGroup">
+             <string notr="true">checkboxGroup</string>
+            </attribute>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer_7">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QComboBox" name="comboBox_quotingstyle"/>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QCheckBox" name="label_r">
+          <property name="text">
+           <string>40. Tersten sırala</string>
+          </property>
+          <attribute name="buttonGroup">
+           <string notr="true">checkboxGroup</string>
+          </attribute>
+         </widget>
+        </item>
+        <item>
+         <widget class="QCheckBox" name="label_R">
+          <property name="text">
+           <string>41. Özyinele (Alt dizinler ile birlikte listele)</string>
+          </property>
+          <attribute name="buttonGroup">
+           <string notr="true">checkboxGroup</string>
+          </attribute>
+         </widget>
+        </item>
+        <item>
+         <widget class="QCheckBox" name="label_s">
+          <property name="text">
+           <string>42. Boyutu göster</string>
+          </property>
+          <attribute name="buttonGroup">
+           <string notr="true">checkboxGroup</string>
+          </attribute>
+         </widget>
+        </item>
+        <item>
+         <widget class="QCheckBox" name="label_S">
+          <property name="text">
+           <string>43. -S</string>
+          </property>
+          <attribute name="buttonGroup">
+           <string notr="true">checkboxGroup</string>
+          </attribute>
+         </widget>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_5">
+          <item>
+           <widget class="QCheckBox" name="label_sort">
+            <property name="text">
+             <string>44. --sort=WORD</string>
+            </property>
+            <attribute name="buttonGroup">
+             <string notr="true">checkboxGroup</string>
+            </attribute>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer_8">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QComboBox" name="comboBox_sort"/>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_4">
+          <item>
+           <widget class="QCheckBox" name="label_time">
+            <property name="text">
+             <string>45. --time= with -l</string>
+            </property>
+            <attribute name="buttonGroup">
+             <string notr="true">checkboxGroup</string>
+            </attribute>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer_9">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QComboBox" name="comboBox_time"/>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_3">
+          <item>
+           <widget class="QCheckBox" name="label_timestyle">
+            <property name="text">
+             <string>46. --time-style=STYLE   </string>
+            </property>
+            <attribute name="buttonGroup">
+             <string notr="true">checkboxGroup</string>
+            </attribute>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer_10">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QComboBox" name="comboBox_timestyle"/>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QCheckBox" name="label_t">
+          <property name="text">
+           <string>47. Değiştirme zamanına göre sırala (İlk önce en son oluşturulan)</string>
+          </property>
+          <attribute name="buttonGroup">
+           <string notr="true">checkboxGroup</string>
+          </attribute>
+         </widget>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_10">
+          <item>
+           <widget class="QCheckBox" name="label_tabsize">
+            <property name="text">
+             <string>48. -T, --tabsize=COLS</string>
+            </property>
+            <attribute name="buttonGroup">
+             <string notr="true">checkboxGroup</string>
+            </attribute>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer_11">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="lineEdit_tabsize"/>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QCheckBox" name="label_u">
+          <property name="text">
+           <string>49. -u</string>
+          </property>
+          <attribute name="buttonGroup">
+           <string notr="true">checkboxGroup</string>
+          </attribute>
+         </widget>
+        </item>
+        <item>
+         <widget class="QCheckBox" name="label_U">
+          <property name="text">
+           <string>50. Sıralama, girişleri dizin düzenine göre listele</string>
+          </property>
+          <attribute name="buttonGroup">
+           <string notr="true">checkboxGroup</string>
+          </attribute>
+         </widget>
+        </item>
+        <item>
+         <widget class="QCheckBox" name="label_v">
+          <property name="text">
+           <string>51. Metin içerisindeki sayıları doğal sırala</string>
+          </property>
+          <attribute name="buttonGroup">
+           <string notr="true">checkboxGroup</string>
+          </attribute>
+         </widget>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_11">
+          <item>
+           <widget class="QCheckBox" name="label_width">
+            <property name="text">
+             <string>52. -w, --width=COLS</string>
+            </property>
+            <attribute name="buttonGroup">
+             <string notr="true">checkboxGroup</string>
+            </attribute>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer_12">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="lineEdit_width"/>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QCheckBox" name="label_x">
+          <property name="text">
+           <string>53. -x</string>
+          </property>
+          <attribute name="buttonGroup">
+           <string notr="true">checkboxGroup</string>
+          </attribute>
+         </widget>
+        </item>
+        <item>
+         <widget class="QCheckBox" name="label_X">
+          <property name="text">
+           <string>54. Uzantıya göre alfabetik olarak sırala</string>
+          </property>
+          <attribute name="buttonGroup">
+           <string notr="true">checkboxGroup</string>
+          </attribute>
+         </widget>
+        </item>
+        <item>
+         <widget class="QCheckBox" name="label_Z">
+          <property name="text">
+           <string>55. print any security context of each file</string>
+          </property>
+          <attribute name="buttonGroup">
+           <string notr="true">checkboxGroup</string>
+          </attribute>
+         </widget>
+        </item>
+        <item>
+         <widget class="QCheckBox" name="label_1">
+          <property name="text">
+           <string>56. -1</string>
+          </property>
+          <attribute name="buttonGroup">
+           <string notr="true">checkboxGroup</string>
+          </attribute>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources/>
+ <connections/>
+ <buttongroups>
+  <buttongroup name="checkboxGroup">
+   <property name="exclusive">
+    <bool>false</bool>
+   </property>
+  </buttongroup>
+ </buttongroups>
+</ui>
